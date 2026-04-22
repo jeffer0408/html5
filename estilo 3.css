@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@200;400;500&display=swap');
+
+:root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #222222;
+    --accent: #c9a84c;
+    --text: #e8e8e8;
+    --muted: #666666;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    line-height: 1.8;
+    padding: 0;
+    min-height: 100vh;
+    /* subtle grain texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ── HEADER ── */
+header {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    animation: fadeDown 0.9s ease both;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 60px;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    letter-spacing: 0.15em;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+/* ── NAV ── */
+nav {
+    padding: 24px 60px;
+    border-bottom: 1px solid var(--border);
+    animation: fadeDown 0.9s 0.1s ease both;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ── MAIN CONTENT WRAPPER ── */
+main-area, body > section, body > div {
+    padding: 0 60px;
+}
+
+/* ── SECTION TÍTULO ── */
+section.titulo {
+    padding: 70px 60px 0;
+    animation: fadeUp 0.8s ease both;
+}
+
+section.titulo h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+}
+
+section.titulo h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin-top: 12px;
+}
+
+/* ── SECTION CONTENIDO ── */
+section.contenido {
+    padding: 28px 60px 0;
+    display: grid;
+    gap: 1px;
+    animation: fadeUp 0.8s 0.15s ease both;
+}
+
+article {
+    padding: 22px 0;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: #aaaaaa;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+article:first-child {
+    border-top: 1px solid var(--border);
+}
+
+article:hover {
+    color: var(--text);
+    padding-left: 16px;
+}
+
+/* ── DIVIDER LINE between sections ── */
+section.titulo + section.contenido + section.titulo {
+    margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+footer {
+    margin-top: 100px;
+    padding: 40px 60px;
+    border-top: 1px solid var(--border);
+    position: relative;
+    animation: fadeUp 0.8s 0.3s ease both;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 60px;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+}
+
+footer a {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* stagger sections */
+body > section:nth-of-type(1) { animation-delay: 0.2s; }
+body > section:nth-of-type(2) { animation-delay: 0.3s; }
+body > section:nth-of-type(3) { animation-delay: 0.4s; }
+body > section:nth-of-type(4) { animation-delay: 0.5s; }
+body > section:nth-of-type(5) { animation-delay: 0.6s; }
+body > section:nth-of-type(6) { animation-delay: 0.7s; }

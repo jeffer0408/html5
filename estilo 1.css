@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #90E31C;
+    color: #070707;
+    padding: 30px;
+}
+
+header{
+    background: #222;
+    padding: 15px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+.nombre{
+    color: white;
+    text-align: center;
+}
+
+.sobremi{
+    text-align: center;
+}
+
+.proyectos{
+    text-align: center;
+}
+
+.contactos{
+    text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+nav a:hover{
+    color: rgb(233, 77, 5);
+}
+
+section.titulo {
+    background: white;
+    margin-top: 20px;
+    padding: 15px; 
+    border-radius: 10px;
+    width: 20%;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+section.contenido {
+    background: white;
+    margin-top: 8px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+article {
+    padding: 8px 5px;
+    border: none;
+    background: none;
+    text-align: center;
+}
+
+footer{
+    margin-top: 20px;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+footer a{
+    color: rgb(233, 77, 5);
+    margin: 10px;
+}
+
+footer a:hover{
+    color: rgb(236, 231, 229);
+}
